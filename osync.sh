@@ -6502,6 +6502,10 @@ if [ $_QUICK_SYNC -eq 2 ]; then
 		MAX_EXEC_TIME_PER_CMD_AFTER=0
 	fi
 
+	if [ $(IsInteger "$MAX_WAIT") -ne 1 ]; then
+		MAX_WAIT=7200
+	fi
+
 	if [ "$RSYNC_COMPRESS" == "" ]; then
 		RSYNC_COMPRESS=true
 	fi
